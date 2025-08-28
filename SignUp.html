@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign In</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #FFDFB7 0%, #F5A43D 50%, #f44336 100%);
+      margin: 0;
+      padding: 0;
+      font-family: Couture, TW Cen MT;
+      min-height: 100vh;
+      
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 25px;
+      background-color: white;
+    }
+    
+    .title {
+      font-weight: bold;
+      font-size: 18px;
+      max-width: 70%;
+      color: #BF3100;
+    }
+    
+    .buttons {
+      display: flex;
+      gap: 10px;
+    }
+    
+    a.button {
+      background-color: #f44336;
+      color: white;
+      padding: 14px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 4px;
+    }
+    
+    a.button:hover {
+      background-color: #F5A43D;
+    }
+
+    .dropbtn {
+      background-color: #F5A43D;
+      color: white;
+      padding: 15px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #FFDFB7;
+      min-width: maox-content;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #F5A43D;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #FFDFB7;
+      color: black;
+    }
+
+    .site-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .tiles-item-inner {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      max-width: 350px;
+      width: 100%;
+    }
+
+    .form-signin input {
+      width: 93%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .form-actions button {
+      width: 100%;
+      background-color: #f44336;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .form-actions button:hover {
+      background-color: #F5A43D;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <a href="Homepage.html">
+      <img src="images/LOGO_with_caption.png" alt="MASK" height="50">
+    </a>
+    <div class="dropdown">
+      <button class="dropbtn"><font face = 'Couture' color = white>More</font></button>
+      <div class="dropdown-content">
+        <a href="AboutUs.html"><font face = 'TW Cen MT'>About Us</font></a>
+        <a href="RRL.html"><font face = 'TW Cen MT'>RRL</font></a>
+      </div>
+    </div>
+  </div>
+
+  <main class="site-content">
+    <section class="signin section">
+      <div class="container-xs">
+        <div class="signin-inner section-inner">					
+          <div class="tiles-wrap">
+            <div class="tiles-item">
+              <div class="tiles-item-inner has-shadow">
+                <form class="form-signin">
+                  <fieldset>
+                    <div class="form-group mb-16">
+                      <label class="form-label screen-reader" for="name">Full Name</label>
+                      <input id="name" class="form-input" type="name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group mb-16">
+                      <label class="form-label screen-reader" for="email">E-mail</label>
+                      <input id="email" class="form-input" type="email" placeholder="E-Mail" required>
+                    </div>
+                    <div class="form-group mb-24">
+                      <label class="form-label screen-reader" for="password">Password</label>
+                      <input id="password" class="form-input" type="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-actions">
+                      <button class="button button-primary button-block button-shadow"><font face = 'TW Cen MT' size = 5px>Sign Up</font></button>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
