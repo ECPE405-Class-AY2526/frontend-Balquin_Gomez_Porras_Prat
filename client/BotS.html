@@ -13,13 +13,30 @@
       display: flex;
       flex-direction: column;
     }
-    
+
     .header {
       display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1000;
+
       justify-content: space-between;
       align-items: center;
       padding: 20px 25px;
       background-color: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+    }
+
+    .site-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 20px 20px;
     }
     
     .title {
@@ -104,7 +121,7 @@
       background-color: #FFDFB7;
       min-width: max-content;
       box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
+      z-index: 2000;
     }
 
     .dropdown-content a {
@@ -133,7 +150,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 125px, 20px, 20px;
     }
 
     .tiles-item-inner {
@@ -169,42 +186,41 @@
     }
 
     .intro-box {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  max-width: 800px;
-  text-align: center;
-  line-height: 1.6;
-  animation: fadeIn 1.2s ease-in-out;
-}
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      max-width: 800px;
+      text-align: center;
+      line-height: 1.6;
+      animation: fadeIn 1.2s ease-in-out;
+    }
 
-.intro-box h1 {
-  color: #BF3100;
-  margin-bottom: 20px;
-  font-size: 28px;
-}
+    .intro-box h1 {
+      color: #BF3100;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
 
-.intro-box p {
-  color: #333;
-  font-size: 18px;
-  margin-bottom: 15px;
-}
+    .intro-box p {
+      color: #333;
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-family: 'Arial', sans-serif;
+    }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
     footer {
       background-color: #f44336;
       color: white;
       text-align: center;
-      padding: 10px;
-      font-size: 20px;
-      font-family: Couture, Arial, sans-serif;
-      margin-top: auto;
+      padding: 1px;
+      font-size: 10px;
+      font-family: Couture;
     }
   </style>
 </head>
@@ -229,7 +245,9 @@
     <p>
       Traditional fire alarms alert building occupants by sounding throughout the area when smoke detectors sense smoke, prompting evacuation. However, these alarms don’t indicate the fire’s exact location, which can sometimes lead people toward danger. Conventional systems rely on smoke detectors that trigger only after detecting smoke, which may delay alarms if a fire has already developed but hasn’t produced enough smoke yet.   
     </p>
+    <p>
       In places like kitchens, smoke detectors can cause false alarms due to steam or fumes, causing unnecessary panic. Additionally, sprinkler activation often causes significant water damage, even for minor fires that might have been controlled without full deployment. Modern Technology is used to develop smarter fire detection and suppression systems with the integration of Machine Learning (ML) enabled Internet of Things (IoT) device monitoring system. 
+    </p>
     <p>
       The integration of modern technology in the development of fire detection systems aims to address the disadvantages of traditional fire systems by minimizing false alarms, improve response accuracy, and reduce unnecessary water damage by activating suppression only when truly necessary. 
     </p>
@@ -244,7 +262,7 @@
   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
   <footer>
-    <p>hello</p>
+    <p>Developed by Team MASK | 2025 | For Academic Purposes</p>
   </footer>
 
   <script>

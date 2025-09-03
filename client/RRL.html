@@ -16,14 +16,32 @@
       flex-direction: column;
     }
 
+
     .header {
       display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1000;
+
       justify-content: space-between;
       align-items: center;
       padding: 20px 25px;
       background-color: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-sizing: border-box;
     }
 
+    .site-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 20px 20px;
+    }
+    
     .dropbtn {
       background-color: #F5A43D;
       color: white;
@@ -46,7 +64,7 @@
       background-color: #FFDFB7;
       min-width: max-content;
       box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
+      z-index: 2000;
     }
 
     .dropdown-content a {
@@ -71,7 +89,7 @@
     }
 
     section {
-      padding: 50px 0;
+      padding: 115px 20px 50px;
       text-align: center;
     }
 
@@ -146,10 +164,9 @@
       background-color: #f44336;
       color: white;
       text-align: center;
-      padding: 10px;
-      font-size: 20px;
-      font-family: Couture, Arial, sans-serif;
-      margin-top: auto;
+      padding: 1px;
+      font-size: 10px;
+      font-family: Couture;
     }
   </style>
 </head>
@@ -173,41 +190,56 @@
 
     <div class="card">
       <div class="card-text">
-        <h2>Title</h2>
-        <p>Info</p>
-        <a href="Homepage.html" class="btn">Learn More</a>
+        <h2>Infrared Camera</h2>
+        <p>According to Konon and Savchuk (2022), the study highlights the concept of pyro-electric infrared (PIR) sensors integrated with digital neural networks (DNN) to enable real-time thermal imaging for early fire detection. This AI-enhanced method offers faster and more accurate detection compared to traditional smoke-based systems.
+        </p>
+        <p>Based on the study conducted by John, J., and Adelusi, J. B. (2020), thermal imaging is considered as a highly innovative method for fire detection due to its ability to detect temperature variations in real time. It excels at identifying hidden or smoldering fires using infrared heat patterns, surpassing traditional detection methods in accuracy and response time.          
+        </p>
       </div>
     </div>
 
     <div class="card">
       <div class="card-text">
-        <h2>Title</h2>
-        <p>Info</p>
-        <a href="Homepage.html" class="btn">Learn More</a>
+        <h2>Raspberry Pi</h2>
+        <p>According to Bhavani et. al (2023), explores the application of Raspberry Pi in automated fire detection, along with a camera, is used to detect and alert to potential fire hazards that may occur. The automated fire system operates by setting up the Raspberry Pi with a camera module to capture images at regular intervals. The automated fire detection aims to detect any fire presence and alert people to proceed to evacuate or take any precautions to stop the fire from spreading.</p>
+        <p>Spandana et al. (2023) developed a fire detection system using a Raspberry Pi controller to process camera inputs and identify fires based on heat signatures. Once a fire is detected through image processing, the system automatically sends real-time reports to users via Wi-Fi or GSM. The Raspberry Pi was chosen for its low cost, low power consumption, and efficiency in handling fire detection tasks. This approach demonstrates a practical, affordable, and responsive solution for real-time fire monitoring.</p>
+        <p>According to Lee et al. (2023), an IoT-based fire detection system was developed using a Raspberry Pi paired with a fisheye camera providing a 220° wide-angle view. The system employs the OpenCV library for image analysis to detect and suppress forest fires at an early stage. Fire location is determined through polar coordinate calculations of omnidirectional images, while continuous images are transmitted via Wi-Fi to a Firebase database. These images are then analyzed to trace the movement path of the forest fire, enabling timely monitoring and response.         
+        </p>
       </div>
     </div>
 
     <div class="card">
       <div class="card-text">
-        <h2>Title</h2>
-        <p>Info</p>
-        <a href="Homepage.html" class="btn">Learn More</a>
+        <h2>Automated Fire Alarm System</h2>
+        <p>Thermal cameras combined with computer vision techniques are increasingly used for fire detection, capturing both RGB and infrared images. The integration of edge computing improves detection accuracy and enables immediate alarm activation, allowing the system to identify fires during both day and night. Cloud storage further enhances the system by supporting remote, real-time monitoring and data analysis. According to Yang et al. (2024), the proposed design includes detailed system architecture, data collection, and detection algorithms that leverage both RGB and thermal image data for effective fire detection.</p>
+        <p>Jose et al. (2022) developed an automated fire detection system capable of detecting fires in real time and determining when they reach dangerous levels. The system is designed to be fast, accurate, and error-free, with its main feature being the ability to send automated remote alerts via email to the fire department, the homeowner, and multiple residents. It operates continuously with 24/7 internet connectivity to ensure reliability. The system was implemented using Python and OpenCV, highlighting its practical application for real-time fire monitoring and reporting.</p>
+        <p>Lee et al. (2024) propose an Autonomous Fire Detection and Suppression System (AFDSS) designed specifically for unmanned ships. The system integrates multispectral sensors (RGB, IR, and UV) with algorithms to improve fire detection accuracy and reduce false alarms, while also incorporating an automatic control system (ACS) and fire monitor to withstand dynamic maritime conditions. A robust extinguishing method was also developed to adapt to the maritime environment. In testing, the AFDSS achieved 100% detection accuracy, localization within ≤1.9 m, and effective suppression under simulated sea state 4 conditions.</p>
       </div>
     </div>
 
     <div class="card">
       <div class="card-text">
-        <h2>Title</h2>
-        <p>Info</p>
-        <a href="Homepage.html" class="btn">Learn More</a>
+        <h2>Fire Detection with IOT</h2>
+        <p>According to Meng et al. (2024), recent technological advancements aim to improve the speed of detecting and suppressing fires. The study highlights modern management systems and models that support fire monitoring and response. Advanced solutions such as infrared visible light cameras and thermal imaging cameras have been introduced, though they require efficient routing protocols for rapid data transfer (AL-Dhief et al., 2019). Furthermore, image-based fire detection integrated with a decision-making framework has been proposed to enhance the efficiency of fire suppression.</p>
+        <p>A study on thermal imaging sensors highlights their value in automating and monitoring fire detection for real-time warning systems. The research outlines three main contributions: first, evaluating thermal imaging with image processing algorithms for accurate detection through data compression and enhancement; second, presenting a data-driven thermal imaging analysis for fire situation awareness in robotic perception, tested in controlled fire scenarios (Sousa et al., 2020); and third, emphasizing the integration of thermal cameras in UAV-based fire surveillance. These advancements show how thermal imaging supports both accuracy and automation in fire detection.</p>
+        <p>Yang et al. (2024) emphasize the importance of real-time images and videos in fire monitoring systems to support decision-making and resource allocation during emergencies. Their study focuses on developing simple and embeddable models suitable for small computer systems while maintaining high accuracy in fire detection. To achieve this, they integrate the YOLOv5s network, known for its small size and fast processing, with a squeeze-and-excitation module for image filtering and classification. This combination enables faster, more accurate detection by filtering out irrelevant data in real time.</p>
+        <p>Tsai et al. (2022) propose using a thermal camera integrated with a deep learning model to detect humans in low-visibility fire and smoke environments. Their system applies the YOLOv4 model to infrared images captured by the thermal camera for real-time object detection. Trained on an Nvidia GeForce 2070, YOLOv4 achieved 95% accuracy at 30.2 frames per second (FPS), proving its effectiveness in identifying humans during emergencies. This approach enhances safety by enabling reliable detection even in challenging conditions.</p>
       </div>
     </div>    
+
+    <div class="card">
+      <div class="card-text">
+        <h2>Fire Scale</h2>
+        <p>According to the Western Fire Chiefs Association (2024), fire intensity measures the power of a fire based on energy release, heat, behavior, and spread rate. It is classified into four levels: low intensity fires that are manageable and slow-moving, moderate intensity fires with slightly higher flames and moderate spread, high intensity fires that produce extreme heat and spread quickly, and extreme intensity fires that are the fastest, hardest to control, and highly dangerous. These intensity levels help describe flame size, rate of spread, and the difficulty of controlling a fire.</p>
+        <p>Fire behavior is commonly described using fire intensity, which reflects its direction, speed, and energy release. According to Ruecker et al. (2021), infrared sensors with different spectral and temporal resolutions are used to measure fire radiative power and spread. Sentinel-2 provides high spatial resolution for detection but low temporal resolution, VIIRS offers moderate spatial resolution with daily observations, and Meteosat SEVIRI delivers high temporal resolution but low spatial resolution. The rate of spread was analyzed by tracking fire front displacement between Sentinel-2 mid-morning passes and VIIRS early afternoon passes.</p>
+      </div>
+    </div>
   </section>
 
   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
   <footer>
-    <p>hello</p>
+    <p>Developed by Team MASK | 2025 | For Academic Purposes</p>
   </footer>
 
   <script>

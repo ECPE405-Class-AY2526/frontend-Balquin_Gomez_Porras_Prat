@@ -18,10 +18,19 @@
 
     .header {
       display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1000;
+
       justify-content: space-between;
       align-items: center;
       padding: 20px 25px;
       background-color: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-sizing: border-box;
     }
 
     .dropbtn {
@@ -71,7 +80,7 @@
     }
 
     section {
-      padding: 50px 0;
+      padding: 115px 20px 50px;
       text-align: center;
     }
 
@@ -165,11 +174,16 @@
       background-color: #f44336;
       color: white;
       text-align: center;
-      padding: 10px;
-      font-size: 20px;
-      font-family: Couture, Arial, sans-serif;
-      margin-top: auto;
+      padding: 1px;
+      font-size: 10px;
+      font-family: Couture;
     }
+    
+    h1 {
+      color: #BF3100;
+    }
+
+
   </style>
 </head>
 <body>
@@ -195,8 +209,8 @@
         <img src="images/aaz.png" alt="Intro 1">
       </div>
       <div class="card-text">
-        <h2>Aazalyia Griyz Balquin</h2>
-        <p>Info</p>
+        <h2>Aazalyia Griyz L. Balquin</h2>
+        <p>Sup! I’m Aazalyia Griyz L. Balquin, a 4th-year Computer Engineering student. When I’m not busy tinkering with hardware, you’ll probably catch me dancing, playing sports. I just love working with my hands and bringing ideas to life!</p>
       </div>
     </div>
 
@@ -206,7 +220,7 @@
       </div>
       <div class="card-text">
         <h2>Meg K. Gomez</h2>
-        <p>Info</p>
+        <p>Yo! I’m Meg K. Gomez, a 4th-year Computer Engineering student with a big love for creativity. I shine the most in coding and software development, especially HTML and designing user interfaces since it lets me mix my technical skills with my passion for visual art.</p>
       </div>
     </div>
 
@@ -215,8 +229,8 @@
         <img src="images/kei.png" alt="Intro 3">
       </div>
       <div class="card-text">
-        <h2>Keisha Tugado Porras</h2>
-        <p>Info</p>
+        <h2>Keisha Marie T. Porras</h2>
+        <p>Hey, I’m Keisha Marie T. Porras, a 4th-year Computer Engineering student. I usually keep things low-key, but I’m confident when it comes to hardware and solving math problems. During my free time, I enjoy reading mangas, watching anime, and listening to music.</p>
       </div>
     </div>
 
@@ -225,8 +239,8 @@
         <img src="images/sof.png" alt="Intro 2">
       </div>
       <div class="card-text">
-        <h2>Sofia Nicole Prat</h2>
-        <p>Info</p>
+        <h2>Sofia Nicole J. Prat</h2>
+        <p>Hello, I’m Sofia Nicole J. Prat, a 4th-year Computer Engineering student. I aspire to become an ethical hacker in the future, and I excel in circuitry, where I enjoy applying precision and problem-solving to my work. And whenever stress piles up, my go-to comfort is eating chocolates.</p>
       </div>
     </div>    
   </section>
@@ -234,7 +248,7 @@
   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
   <footer>
-    <p>hello</p>
+    <p>Developed by Team MASK | 2025 | For Academic Purposes</p>
   </footer>
 
   <script>

@@ -13,13 +13,22 @@
       display: flex;
       flex-direction: column;
     }
-    
+
     .header {
       display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1000;
+
       justify-content: space-between;
       align-items: center;
       padding: 20px 25px;
       background-color: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-sizing: border-box;
     }
     
     .title {
@@ -70,7 +79,7 @@
       background-color: #FFDFB7;
       min-width: maox-content;
       box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
+      z-index: 2000;
     }
 
     .dropdown-content a {
@@ -98,7 +107,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 125px, 20px, 20px;
     }
 
     .tiles-item-inner {
@@ -155,11 +164,11 @@
           <div class="tiles-wrap">
             <div class="tiles-item">
               <div class="tiles-item-inner has-shadow">
-                <form class="form-signin">
+                <form id="signup-form" class="form-signin">
                   <fieldset>
                     <div class="form-group mb-16">
                       <label class="form-label screen-reader" for="name">Full Name</label>
-                      <input id="name" class="form-input" type="name" placeholder="Full Name" required>
+                      <input id="name" class="form-input" type="text  " placeholder="Full Name" required>
                     </div>
                     <div class="form-group mb-16">
                       <label class="form-label screen-reader" for="email">E-mail</label>
@@ -181,5 +190,33 @@
       </div>
     </section>
   </main>
+<script>
+  document.getElementById("signup-form").addEventListener("submit", async (e) => {
+    e.preventDefault(); // Stop the page from refreshing
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    try {
+      const response = await fetch("http://localhost:3001/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        window.location.href = "Homepage.html";  
+      } else {
+        alert("Signup failed: " + data.message);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error connecting to server.");
+    }
+  });
+</script>
 </body>
 </html>
