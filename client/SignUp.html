@@ -179,7 +179,8 @@
                       <input id="password" class="form-input" type="password" placeholder="Password" required>
                     </div>
                     <div class="form-actions">
-                      <button class="button button-primary button-block button-shadow"><font face = 'TW Cen MT' size = 5px>Sign Up</font></button>
+                      <a href="Homepage.html" class="button button-primary button-block button-shadow">
+                      <font face='TW Cen MT' size=5px>Sign Up</font></a>
                     </div>
                   </fieldset>
                 </form>
@@ -190,33 +191,6 @@
       </div>
     </section>
   </main>
-<script>
-  document.getElementById("signup-form").addEventListener("submit", async (e) => {
-    e.preventDefault(); // Stop the page from refreshing
-
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    try {
-      const response = await fetch("http://localhost:3001/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password })
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        window.location.href = "Homepage.html";  
-      } else {
-        alert("Signup failed: " + data.message);
-      }
-    } catch (err) {
-      console.error(err);
-      alert("Error connecting to server.");
-    }
-  });
-</script>
+<script src="signup.js"></script>
 </body>
 </html>

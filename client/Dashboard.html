@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #FFDFB7 0%, #F5A43D 50%, #f44336 100%);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .dashboard {
+      margin-top: 100px;
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      display: inline-block;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: #BF3100;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      background: #f44336;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .btn:hover {
+      background: #F5A43D;
+    }
+
+    footer {
+      margin-top: 50px;
+      background-color: #f44336;
+      color: white;
+      padding: 5px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <h1>Welcome, <span id="username"></span>!</h1>
+    <p>You are now logged in. Choose where you want to go:</p>
+
+    <a href="Homepage.html" class="btn">Homepage</a>
+    <a href="AboutUs.html" class="btn">About Us</a>
+    <a href="RRL.html" class="btn">RRL</a>
+    <a href="Introduction.html" class="btn">Introduction</a>
+    <a href="SignUp.html" class="btn">Sign Up Another User</a>
+    <a href="Homepage.html" class="btn">Logout</a>
+  </div>
+
+  <footer>
+    <p>Developed by Team MASK | 2025 | For Academic Purposes</p>
+  </footer>
+<script>
+  document.getElementById("signup-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    try {
+      const response = await fetch("http://localhost:3001/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        localStorage.setItem("user", JSON.stringify({ name, email }));
+
+        window.location.href = "Dashboard.html";  
+      } else {
+        alert("Signup failed: " + data.message);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error connecting to server.");
+    }
+  });
+</script>
+
