@@ -1,6 +1,5 @@
 const sqlite3 = require('sqlite3').verbose();
 
-// Create (or open) a database file
 const db = new sqlite3.Database('./mask.db', (err) => {
   if (err) {
     console.error("Database connection error:", err);
@@ -9,7 +8,6 @@ const db = new sqlite3.Database('./mask.db', (err) => {
   }
 });
 
-// Create users table if it doesn’t exist
 db.run(`
   CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -27,6 +25,10 @@ const PORT = 3001;
 
 app.use(cors());
 app.use(express.json());
+
+app.use(express.static('client'));
+app.use('/scripts', express.static('server'));
+
 
 app.get('/', (req, res) => {
   res.send('Mask Detection Server is running!');

@@ -15,12 +15,15 @@ document.getElementById("signup-form").addEventListener("submit", async (e) => {
     const data = await response.json();
 
     if (data.success) {
+      console.log("✅ Signup successful:", data);
+      console.log("Redirecting to Homepage.html...");
       localStorage.setItem("user", JSON.stringify({ name, email }));
-
-      window.location.href = "Homepage.html";  
+      window.location.href = "/Homepage.html";  
     } else {
-      alert("Signup failed: " + data.message);
-    }
+  console.warn("⚠️ Signup failed:", data);
+  alert("Signup failed: " + data.message);
+}
+
   } catch (err) {
     console.error(err);
     alert("Error connecting to server.");
